@@ -7,6 +7,7 @@ import (
 	"github.com/Rafiur/api-crud-assessment/internal/router"
 	"github.com/Rafiur/api-crud-assessment/internal/usecase"
 	"github.com/gin-gonic/gin"
+	_ "github.com/lib/pq"
 )
 
 func main() {
