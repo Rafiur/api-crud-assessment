@@ -20,26 +20,29 @@ A clean-architecture RESTful API in Go using the **Gin framework** and **Postgre
 ## 📁 Project Structure
 
 go-tasks-api/
-├── cmd/ # Application entry point
 ├── config/ # DB setup
 ├── internal/
 │ ├── handler/ # HTTP handlers
 │ ├── model/ # Task struct
-│ ├── repository/ # DB layer
+│ ├── repository/
+| | ├── repo_postgres/ # DB layer
 │ ├── router/ # Routing definitions
-│ └── service/ # Business logic
+│ └── usecase/ # Business logic
 ├── schema.sql # PostgreSQL table definition
-├── .env.example # Sample environment config
+├── .env # Environment config
 ├── go.mod
 └── README.md
 
-DB Schema
+## DB Schema
+
 CREATE TABLE tasks (
     id SERIAL PRIMARY KEY,
     name VARCHAR NULL,
     description VARCHAR NULL,
     priority INT NULL
 );
+## API Endpoints
+
 | Method | Endpoint    | Description     |
 | ------ | ----------- | --------------- |
 | GET    | /tasks/list | List all tasks  |
