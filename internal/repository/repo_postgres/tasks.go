@@ -25,7 +25,7 @@ func (repo *TaskRepository) Create(task *model.Task) (*model.Task, error) {
 
 func (repo *TaskRepository) GetByID(id int) (*model.Task, error) {
 	var task model.Task
-	err := repo.db.QueryRow("SELECT id, name, description, priority FROM items WHERE id = $1", id).Scan(&task.ID, &task.Name, &task.Description, &task.Priority)
+	err := repo.db.QueryRow("SELECT id, name, description, priority FROM tasks WHERE id = $1", id).Scan(&task.ID, &task.Name, &task.Description, &task.Priority)
 	if err != nil {
 		return nil, err
 	}
