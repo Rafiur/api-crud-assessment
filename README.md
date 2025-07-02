@@ -51,4 +51,6 @@ CREATE TABLE tasks (
 | PUT    | /tasks/:id  | Update task     |
 | DELETE | /tasks/:id  | Delete task     |
 
+
 Tested with Postman. Screenshots attached in the /screenshots folder.
+Added the postman collection JSON as well
